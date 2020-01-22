@@ -13,14 +13,14 @@ function find(){
     return db('accounts')
 }
 
-function add(Car){
-    return db('car-dealer')
-    .insert(Car, 'id')
-    .then(([id]) => findBy(id));
+function add(input){
+    return db('accounts')
+    .insert(input, 'id')
+    .then(([id]) => findById(id));
 }
 
 function findById(id){
-    return db('car-dealer')
+    return db('accounts')
     .where({ id })
     .first();
 }
